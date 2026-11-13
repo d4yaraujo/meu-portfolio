@@ -2329,6 +2329,69 @@ h4 cite {
   line-height: 1.7;
 }
 
+/* ========================================
+   RESULTADOS
+======================================== */
+
+.results {
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.result-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 330px;
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  transition: background .3s ease, transform .3s ease;
+}
+
+.result-card:hover {
+  transform: translateY(-5px);
+  background: rgba(216, 201, 181, .2);
+}
+
+.result-card > span {
+  color: var(--olive);
+  font-size: .65rem;
+  font-weight: 600;
+}
+
+.result-icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  margin: 3rem 0 auto;
+  border-radius: 50%;
+  color: var(--paper);
+  background: var(--olive);
+  font-size: 1.3rem;
+}
+
+.result-card h3 {
+  margin: 1.5rem 0 .7rem;
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.result-card p {
+  min-height: 3.5rem;
+  margin: 0;
+  color: #73756c;
+  font-size: .75rem;
+  line-height: 1.7;
+}
+
 
 /* ========================================
    MÉTRICAS E GOOGLE ANALYTICS

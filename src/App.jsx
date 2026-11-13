@@ -21,7 +21,7 @@ const A = ({
   <a
     className={className}
     href={href}
-    {...(external ? { target: "_blank", rel: "noreferrer" } : {})}
+    {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
     {...props}
   >
     {children}
@@ -37,6 +37,7 @@ const SectionHeading = ({ eyebrow, title, intro }) => (
     {intro && <p className="section-intro">{intro}</p>}
   </header>
 );
+
 
 const projects = [
   {
@@ -56,17 +57,19 @@ const projects = [
     className: "project-edn",
     image: "edn-projeto.png",
     href: "https://www.edntopografia.com/",
+    external: true,
   },
   {
     n: "03",
     type: "TELECOMUNICAÇÕES",
     title: "Conectividade que aproxima.",
-    text: "Experiência digital para uma empresa de internet fibra óptica, com foco em serviços, planos e comunicação com clientes.",
+    text: "Experiência digital para uma empresa de internet fibra óptica.",
     className: "project-netprimer",
     image: "/netprimer.png",
     href: "https://netprimer.vercel.app/",
+    external: true,
   },
-    {
+  {
     n: "04",
     type: "E-COMMERCE",
     title: "Experiência de compra",
@@ -77,14 +80,18 @@ const projects = [
   },
   {
     n: "05",
-  type: "DESIGN GRÁFICO",
-  title: "Designs que comunicam.",
-  text: "Criação de peças visuais, conteúdos para redes sociais e identidades que fortalecem marcas.",
-  className: "project-web",
-  image: "/vision.png",
-  href: "https://www.instagram.com/vision.conssig/",
+    type: "DESIGN GRÁFICO",
+    title: "Designs que comunicam.",
+    text: "Criação de peças visuais e conteúdos para redes sociais.",
+    className: "project-web",
+    image: "/vision.png",
+    href: "https://www.instagram.com/vision.conssig/",
+    external: true,
   },
 ];
+
+
+
 
 const navItems = [
   ["Sobre", "#sobre-mim"],
@@ -406,6 +413,8 @@ function App() {
                 </a>
               </div>
             </div>
+          
+
 
             <div className="solution-right">
 
@@ -464,9 +473,10 @@ function App() {
           <div className="project-list">
             {projects.map((project) => (
               <A
-                className="project-row "
-                href={project.href}
-                key={project.n}
+              className="project-row"
+              href={project.href}
+              external={project.external}
+              key={project.n}
               >
                 <span className="project-number">
                   {project.n}
@@ -969,7 +979,8 @@ function App() {
             </p>
             <A
               className="button button-light"
-              href="mailto:contato@dayanearaujo.dev?subject=Orçamento%20de%20projeto"
+               href="https://wa.me/5511912958998?text=Ol%C3%A1!%20Vim%20pelo%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20saber%20mais%20sobre%20seus%20servi%C3%A7os."
+              external
             >
               Vamos conversar sobre seu projeto
               <Arrow />
